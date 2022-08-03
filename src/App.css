@@ -12,44 +12,37 @@ body {
 
 .App {
   min-width: 45%;
-  max-width: 80%;
-  width: 80%;
+  max-width: 99%;
+  width: 99%;
 
-  height: 80vh;
-}
-
-.Top-Painel {
+  height: 90vh;
   display: flex;
-  height: 70%;
 }
 
-.Left-Display {
-  background-color: blue;
-  width: 35%;
+.Left-Painel {
+  overflow: auto;
+}
+
+.Left-Painel,
+.Right-Painel {
+  width: 15%;
+}
+
+.Middle-Painel {
+  width: 85%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3px;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.Right-Display {
-  background-color: green;
-  width: 65%;
-}
-
-.Left-Display,
-.Right-Display,
-.Botton-Painel {
+.Left-Painel,
+.Middle-Painel,
+.Right-Painel {
   background-color: #342c28;
   border: solid 1px white;
   border-radius: 10px;
   margin: 1px;
   text-align: center;
-}
-
-.Botton-Painel {
-  height: 30%;
-  overflow: auto;
 }
 
 .table {
@@ -93,4 +86,9 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.btn-check:checked + .btn-secondary {
+  background-color: red !important;
+  border-color: yellow !important;
 }

@@ -1,4 +1,5 @@
 import Table from "react-bootstrap/Table";
+import Form from "react-bootstrap/Form";
 
 const Logs = (props) => {
   const printLogs = (logs) => {
@@ -11,14 +12,23 @@ const Logs = (props) => {
       return (
         <tr name={idx}>
           <td>{log.iteration}</td>
-          <td>{route}</td>
-          <td>{log.value}</td>
+          <td>
+            <Form.Control value={route} disabled />
+          </td>
+          <td>
+            <Form.Control value={log.value} disabled />
+          </td>
         </tr>
       );
     });
   };
   return (
-    <Table>
+    <Table
+      style={{
+        width: "95%",
+        "align-self": "baseline",
+      }}
+    >
       <thead>
         <tr>
           <th>#</th>
@@ -26,19 +36,7 @@ const Logs = (props) => {
           <th>Distância</th>
         </tr>
       </thead>
-      <tbody>
-        {/* <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-        </tr> */}
-        {printLogs(props.logs)}
-      </tbody>
+      <tbody>{printLogs(props.logs)}</tbody>
     </Table>
   );
 };
